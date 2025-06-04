@@ -1,0 +1,10 @@
+deptrac:
+  paths:
+    - ./src
+
+  exclude_files:
+    - '#.*Test\.php$#'
+
+  layers:
+
+  ruleset:

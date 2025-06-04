@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
@@ -21,16 +21,56 @@ jobs:
           coverage: xdebug
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Validate composer.json
         run: composer validate
 
+      - name: Run PHPStan on changed files
+        run: composer analyze
+
+      - name: Run Psalm static analysis
+        run: composer psalm
+
+      - name: Check code style with PHP-CS-Fixer on changed files
+        run: |
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep '\.php$' || true)
+          if [ -n "$CHANGED" ]; then
+            echo "$CHANGED" | xargs PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes
+          else
+            echo "No changed PHP files to fix."
+          fi
+
+      - name: Architecture Check (Deptrac)
+        run: composer deptrac
+
+      - name: Run Psalm with Shepherd
+        run: composer psalm:shepherd
+
+      - name: Check platform requirements
+        run: composer check-platform-reqs
+
+      - name: Check for security vulnerabilities
+        run: composer audit
+
       - name: Run tests
         run: composer test
 
-      - name: Run tests with coverage
+      - name: Run tests with code coverage
+        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover=coverage.xml --coverage-filter=src
+
+      - name: Run mutation testing with Infection
         run: |
-          XDEBUG_MODE=coverage vendor/bin/phpunit \
-            --coverage-clover=coverage.xml \
-            --coverage-filter=src
+          ./vendor/bin/infection \
+            --threads=4 \
+            --show-mutations \
+            --logger-github
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: haspadar/paira
+          files: coverage.xml
+          fail_ci_if_error: true

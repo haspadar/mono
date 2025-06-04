@@ -1,0 +1,10 @@
+parameters:
+    level: max
+    paths:
+        - src
+    errorFormat: table
+    reportUnmatchedIgnoredErrors: false
+
+    checkUninitializedProperties: true
+    checkClassCaseSensitivity: true
+    checkDynamicProperties: true

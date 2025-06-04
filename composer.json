@@ -1,0 +1,17 @@
+{
+  "name": "paira/paira",
+  "description": "Asynchronous P2P matching engine for pairing withdrawals with deposits",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Paira\\": "src/"
+    }
+  }
+}

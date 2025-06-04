@@ -1,0 +1,23 @@
+# Composer dependencies
+/vendor/
+
+# Tool caches
+.phpunit.result.cache
+
+# IDE settings
+/.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage.txt
+coverage.xml
+coverage/
+/coverage-report/
+/coverage_report.txt
+
+# PhpUnit cache
+/phpunit.xml.bak
+/.phpunit.cache/

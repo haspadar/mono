@@ -52,4 +52,11 @@ final class LengthOfTest extends TestCase
         $length = new LengthOf(new TextOf('1234'));
         $this->assertTrue($length->isGreaterThan(3));
     }
+
+    #[Test]
+    public function confirmsNotGreaterThan(): void
+    {
+        $length = new LengthOf(new TextOf('123'));
+        $this->assertFalse($length->isGreaterThan(3));
+    }
 }

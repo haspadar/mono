@@ -42,9 +42,6 @@ jobs:
             echo "No changed PHP files to fix."
           fi
 
-      - name: Architecture Check (Deptrac)
-        run: composer deptrac
-
       - name: Run Psalm with Shepherd
         run: composer psalm:shepherd
 

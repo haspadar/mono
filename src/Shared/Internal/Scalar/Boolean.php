@@ -13,7 +13,7 @@ use Override;
 /**
  * A scalar that returns a boolean value.
  *
- * @extends Scalar<Boolean>
+ * @extends Scalar<bool>
  */
 interface Boolean extends Scalar
 {

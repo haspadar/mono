@@ -16,7 +16,6 @@ use Override;
  * Compares the values of two {@see Scalar<T>} instances using `==`.
  *
  * @template T
- * @implements Boolean
  *
  * @since 0.1
  */

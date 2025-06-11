@@ -25,6 +25,9 @@ final readonly class AndBool implements Boolean
     ) {
     }
 
+    /**
+     * @return bool
+     */
     #[Override]
     public function value(): bool
     {

@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
+use Closure;
 use Override;
 
 /**
@@ -23,15 +24,10 @@ use Override;
  */
 final readonly class LazyBool implements Boolean
 {
-    /**
-     * @var callable(): bool
-     */
-    private mixed $callback;
-
-    public function __construct(callable $callback)
-    {
-        $this->callback = $callback;
-    }
+    public function __construct(
+        /** @var Closure(): bool */
+        private Closure $callback
+    ) {}
 
     #[Override]
     public function value(): bool

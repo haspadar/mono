@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -17,7 +18,7 @@ final class LazyBoolTest extends TestCase
     public function returnsTrueFromCallback(): void
     {
         $this->assertTrue(
-            new LazyBool(fn() => true)->value()
+            new LazyBool(fn () => true)->value()
         );
     }
 
@@ -25,7 +26,7 @@ final class LazyBoolTest extends TestCase
     public function returnsFalseFromCallback(): void
     {
         $this->assertFalse(
-            new LazyBool(fn() => false)->value()
+            new LazyBool(fn () => false)->value()
         );
     }
 }

@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
+use Override;
 use Paira\Shared\Internal\Scalar\Scalar;
 
 /**
@@ -21,5 +22,6 @@ use Paira\Shared\Internal\Scalar\Scalar;
  */
 interface Text extends Scalar
 {
+    #[Override]
     public function value(): string;
 }

@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
 use Paira\Exception;
 
 /**
@@ -18,6 +17,7 @@ use Paira\Exception;
  *
  * @throws Exception If the URL is invalid.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Url extends TextEnvelope
@@ -25,7 +25,7 @@ final readonly class Url extends TextEnvelope
     /**
      * @throws Exception
      */
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         if (!filter_var($this->origin->value(), FILTER_VALIDATE_URL)) {

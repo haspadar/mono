@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * {@see Text} in uppercase.
  *
@@ -19,11 +17,12 @@ use Override;
  * $text = new Uppercased(new TextOf('hello Ў'));
  * echo $text->value(); // 'HELLO Ў'
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Uppercased extends TextEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return mb_strtoupper($this->origin->value());

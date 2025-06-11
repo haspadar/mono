@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Paira\Shared\Internal\Scalar;
 
 use Closure;
-use Override;
 
 /**
  * A boolean that evaluates a callback when its value is requested.
@@ -20,6 +19,7 @@ use Override;
  * Example:
  * new LazyBool(fn() => $user->isBlocked())
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class LazyBool implements Boolean
@@ -30,7 +30,7 @@ final readonly class LazyBool implements Boolean
     ) {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return ($this->callback)();

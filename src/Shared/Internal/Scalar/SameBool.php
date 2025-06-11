@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A boolean that returns true if two scalar values are equal.
  *
@@ -17,9 +15,10 @@ use Override;
  *
  * @template T
  *
+ * @psalm-pure
  * @since 0.1
  */
-final readonly class EqualsBool implements Boolean
+final readonly class SameBool implements Boolean
 {
     /**
      * @param Scalar<T> $left
@@ -31,9 +30,9 @@ final readonly class EqualsBool implements Boolean
     ) {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
-        return $this->left->value() == $this->right->value();
+        return $this->left->value() === $this->right->value();
     }
 }

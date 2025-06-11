@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * String truncated from the right.
  *
@@ -19,6 +17,7 @@ use Override;
  * $text = new TruncatedRight(new TextOf('hello world'), 5);
  * echo $text->value(); // 'hello'
  *
+ * @psalm-pure
  * @since 0.1
  */
 
@@ -31,7 +30,7 @@ final readonly class TruncatedRight extends TextEnvelope
         parent::__construct($text);
     }
 
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return mb_substr($this->origin->value(), 0, $this->length);

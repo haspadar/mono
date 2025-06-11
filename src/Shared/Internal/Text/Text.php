@@ -21,5 +21,6 @@ use Paira\Shared\Internal\Scalar\Scalar;
  */
 interface Text extends Scalar
 {
+    #[\Override]
     public function value(): string;
 }

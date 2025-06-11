@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * {@see Text} without leading or trailing whitespace.
  *
@@ -19,11 +17,12 @@ use Override;
  * $text = new Trimmed(new TextOf('  hello  '));
  * echo $text->value(); // 'hello'
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Trimmed extends TextEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return trim($this->origin->value());

@@ -17,6 +17,7 @@ namespace Paira\Shared\Internal\Text;
  * $length = new LengthOf(new TextOf('Прывітанне'));
  * echo $length->value(); // 10
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class LengthOf

@@ -10,8 +10,6 @@ namespace Paira\Shared\Internal\Text;
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * {@see Text} sanitized for HTML output.
  *
@@ -21,11 +19,12 @@ use Override;
  * $text = new HtmlSanitized(new TextOf('<b>John & "Jane"</b>'));
  * echo $text->value(); // 'John &amp; &quot;Jane&quot;'
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class HtmlSanitized extends TextEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return htmlspecialchars(

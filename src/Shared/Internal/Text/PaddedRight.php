@@ -8,21 +8,20 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
+/**
+ * Right-padded string using {@see str_pad()}.
+ *
+ * Pads the string to the specified length with the given character.
+ *
+ * Example:
+ * $text = new PaddedRight(new TextOf('foo'), 6, '.');
+ * echo $text->value(); // 'foo...'
+ *
+ * @psalm-pure
+ * @since 0.1
+ */
 final readonly class PaddedRight extends TextEnvelope
 {
-    /**
-     * Right-padded string using {@see str_pad()}.
-     *
-     * Pads the string to the specified length with the given character.
-     *
-     * Example:
-     * $text = new PaddedRight(new TextOf('foo'), 6, '.');
-     * echo $text->value(); // 'foo...'
-     *
-     * @since 0.1
-     */
     public function __construct(
         Text $text,
         private int $length,
@@ -31,7 +30,7 @@ final readonly class PaddedRight extends TextEnvelope
         parent::__construct($text);
     }
 
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return str_pad(

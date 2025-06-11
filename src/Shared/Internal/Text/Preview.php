@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * {@see Text} preview truncated to a max length with ellipsis.
  *
@@ -19,6 +17,7 @@ use Override;
  * $text = new Preview(new TextOf('Hello, world!'), 8);
  * echo $text->value(); // 'Hello, w…'
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Preview extends TextEnvelope
@@ -30,7 +29,7 @@ final readonly class Preview extends TextEnvelope
         parent::__construct($origin);
     }
 
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         if ($this->limit < 1) {

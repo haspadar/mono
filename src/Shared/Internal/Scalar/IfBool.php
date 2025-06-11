@@ -8,13 +8,12 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  *
  * @template T
  * @implements Scalar<T>
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class IfBool implements Scalar
@@ -34,7 +33,7 @@ final readonly class IfBool implements Scalar
     /**
      * @return T
      */
-    #[Override]
+    #[\Override]
     public function value(): mixed
     {
         return $this->condition->value()

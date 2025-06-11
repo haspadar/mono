@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * {@see Text} in lowercase.
  *
@@ -19,11 +17,12 @@ use Override;
  * $text = new Lowercased(new TextOf('ЎСЁ БУДЗЕ!'));
  * echo $text->value(); // 'ўсё будзе!'
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Lowercased extends TextEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return mb_strtolower($this->origin->value());

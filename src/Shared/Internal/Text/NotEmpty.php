@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
 use Paira\Exception;
 
 /**
@@ -20,6 +19,7 @@ use Paira\Exception;
  * $text = new NotEmpty(new TextOf(' non-empty '));
  * echo $text->value(); // ' non-empty '
  *
+ * @psalm-pure
  * @throws Exception If the trimmed text is empty.
  *
  * @since 0.1
@@ -29,7 +29,7 @@ final readonly class NotEmpty extends TextEnvelope
     /**
      * @throws Exception
      */
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         if (new Trimmed($this->origin)->value() === '') {

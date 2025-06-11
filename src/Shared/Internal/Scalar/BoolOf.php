@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A boolean that wraps a native `bool` value.
  *
@@ -19,6 +17,7 @@ use Override;
  * Example:
  * new BoolOf(true)
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class BoolOf implements Boolean
@@ -28,7 +27,7 @@ final readonly class BoolOf implements Boolean
     ) {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return (bool) $this->value;

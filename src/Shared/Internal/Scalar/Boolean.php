@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A scalar that returns a boolean value.
  *
@@ -17,6 +15,6 @@ use Override;
  */
 interface Boolean extends Scalar
 {
-    #[Override]
+    #[\Override]
     public function value(): bool;
 }

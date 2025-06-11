@@ -8,13 +8,12 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A boolean that is true if both operands are true.
  *
  * Performs logical AND over two {@see Boolean} scalars.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class AndBool implements Boolean
@@ -25,7 +24,7 @@ final readonly class AndBool implements Boolean
     ) {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return $this->left->value() && $this->right->value();

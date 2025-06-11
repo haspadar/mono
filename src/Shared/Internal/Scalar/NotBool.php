@@ -8,13 +8,12 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A boolean that negates the value of another {@see Boolean}.
  *
  * Returns true if the wrapped boolean is false, and false otherwise.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class NotBool implements Boolean
@@ -24,7 +23,7 @@ final readonly class NotBool implements Boolean
     ) {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return !$this->origin->value();

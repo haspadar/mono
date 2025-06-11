@@ -8,16 +8,15 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Scalar;
 
-use Override;
-
 /**
  * A scalar that always returns `false`.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class FalseBool implements Boolean
 {
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return false;

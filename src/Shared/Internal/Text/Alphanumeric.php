@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
 use Paira\Exception;
 
 /**
@@ -16,11 +15,12 @@ use Paira\Exception;
  *
  * @throws Exception If the text contains non-alphanumeric characters.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class Alphanumeric extends TextEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         if (!preg_match('/^[a-zA-Z0-9]+\z/', $this->origin->value())) {

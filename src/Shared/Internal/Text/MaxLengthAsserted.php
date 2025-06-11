@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
 use Paira\Exception;
 
 /**
@@ -22,6 +21,7 @@ use Paira\Exception;
  *
  * @throws Exception If the text exceeds the length limit.
  *
+ * @psalm-pure
  * @since 0.1
  */
 
@@ -37,7 +37,7 @@ final readonly class MaxLengthAsserted extends TextEnvelope
     /**
      * @throws Exception
      */
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         $length = new LengthOf($this->origin);

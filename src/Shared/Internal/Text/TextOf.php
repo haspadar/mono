@@ -8,11 +8,10 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
-
 /**
  * Text of a plain string.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class TextOf implements Text
@@ -21,7 +20,7 @@ final readonly class TextOf implements Text
     {
     }
 
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         return $this->origin;

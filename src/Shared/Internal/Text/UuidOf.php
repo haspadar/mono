@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-use Override;
 use Paira\Exception;
 
 /**
@@ -16,6 +15,7 @@ use Paira\Exception;
  *
  * @throws Exception If the string is not a valid UUID.
  *
+ * @psalm-pure
  * @since 0.1
  */
 final readonly class UuidOf extends TextEnvelope
@@ -23,7 +23,7 @@ final readonly class UuidOf extends TextEnvelope
     /**
      * @throws Exception
      */
-    #[Override]
+    #[\Override]
     public function value(): string
     {
         if (!preg_match('/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/', $this->origin->value())) {

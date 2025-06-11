@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -24,29 +25,31 @@ use Paira\Exception;
  * @since 0.1
  */
 
-final readonly class MaxLengthAsserted implements Text
+final readonly class MaxLengthAsserted extends TextEnvelope
 {
+    public function __construct(
+        Text $text,
+        private int $limit
+    ) {
+        parent::__construct($text);
+    }
+
     /**
      * @throws Exception
      */
-    public function __construct(
-        private Text $text,
-        private int $limit
-    ) {
-        $length = new LengthOf($this->text);
+    #[Override]
+    public function value(): string
+    {
+        $length = new LengthOf($this->origin);
         if ($length->isGreaterThan($this->limit)) {
             throw new Exception(sprintf(
                 'Text exceeds maximum length of %d (got %d): "%s..."',
                 $this->limit,
                 $length->value(),
-                $this->text->value()
+                $this->origin->value()
             ));
         }
-    }
 
-    #[Override]
-    public function value(): string
-    {
-        return $this->text->value();
+        return $this->origin->value();
     }
 }

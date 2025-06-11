@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -20,15 +21,11 @@ use Override;
  *
  * @since 0.1
  */
-final readonly class Uppercased implements Text
+final readonly class Uppercased extends TextEnvelope
 {
-    public function __construct(private Text $text)
-    {
-    }
-
     #[Override]
     public function value(): string
     {
-        return mb_strtoupper($this->text->value());
+        return mb_strtoupper($this->origin->value());
     }
 }

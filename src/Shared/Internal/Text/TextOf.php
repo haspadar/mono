@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -16,13 +17,13 @@ use Override;
  */
 final readonly class TextOf implements Text
 {
-    public function __construct(private string $value)
+    public function __construct(private string $origin)
     {
     }
 
     #[Override]
     public function value(): string
     {
-        return $this->value;
+        return $this->origin;
     }
 }

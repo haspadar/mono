@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -37,6 +38,6 @@ final class MaxLengthAssertedTest extends TestCase
     public function throwsIfTextExceedsMax(): void
     {
         $this->expectException(Exception::class);
-        new MaxLengthAsserted(new TextOf('this is too long'), 5);
+        new MaxLengthAsserted(new TextOf('this is too long'), 5)->value();
     }
 }

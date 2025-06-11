@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -22,15 +23,15 @@ use Override;
  *
  * @since 0.1
  */
-final readonly class HtmlSanitized implements Text
+final readonly class HtmlSanitized extends TextEnvelope
 {
-    public function __construct(private Text $text)
-    {
-    }
-
     #[Override]
     public function value(): string
     {
-        return htmlspecialchars(strip_tags($this->text->value()), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        return htmlspecialchars(
+            strip_tags($this->origin->value()),
+            ENT_QUOTES | ENT_HTML5,
+            'UTF-8'
+        );
     }
 }

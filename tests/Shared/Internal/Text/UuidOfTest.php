@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -14,6 +15,7 @@ use Paira\Shared\Internal\Text\UuidOf;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+
 final class UuidOfTest extends TestCase
 {
     #[Test]
@@ -31,7 +33,7 @@ final class UuidOfTest extends TestCase
     public function throwsExceptionOnInvalidUuid(string $input): void
     {
         $this->expectException(Exception::class);
-        new UuidOf(new TextOf($input));
+        new UuidOf(new TextOf($input))->value();
     }
 
     public static function invalidUuidProvider(): iterable

@@ -8,10 +8,18 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
+use Paira\Shared\Internal\Scalar\Scalar;
+
 /**
+ * A scalar that represents a string value.
+ *
+ * Implementations provide lazy or decorated string values.
+ *
+ * @extends Scalar<string>
+ *
  * @since 0.1
  */
-interface Text
+interface Text extends Scalar
 {
     public function value(): string;
 }

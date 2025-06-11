@@ -37,8 +37,8 @@ final readonly class IfBool implements Scalar
     #[Override]
     public function value(): mixed
     {
-        return $this->condition
-            ? $this->onTrue
-            : $this->onFalse;
+        return $this->condition->value()
+            ? $this->onTrue->value()
+            : $this->onFalse->value();
     }
 }

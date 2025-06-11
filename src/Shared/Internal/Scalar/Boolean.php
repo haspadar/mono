@@ -18,5 +18,5 @@ use Override;
 interface Boolean extends Scalar
 {
     #[Override]
-    public function value(): Boolean;
+    public function value(): bool;
 }

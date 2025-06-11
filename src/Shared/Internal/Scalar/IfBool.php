@@ -21,8 +21,8 @@ final readonly class IfBool implements Scalar
 {
     /**
      * @param Boolean $condition The condition to evaluate
-     * @param Scalar $onTrue The scalar to return if condition is true
-     * @param Scalar $onFalse The scalar to return if condition is false
+     * @param Scalar<T> $onTrue The scalar to return if condition is true
+     * @param Scalar<T> $onFalse The scalar to return if condition is false
      */
     public function __construct(
         private Boolean $condition,

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -20,13 +21,13 @@ namespace Paira\Shared\Internal\Text;
  */
 final readonly class LengthOf
 {
-    public function __construct(private Text $text)
+    public function __construct(protected Text $origin)
     {
     }
 
     public function value(): int
     {
-        return mb_strlen($this->text->value());
+        return mb_strlen($this->origin->value());
     }
 
     public function isLessThanOrEqual(int $max): bool

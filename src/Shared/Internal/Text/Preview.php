@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -20,12 +21,13 @@ use Override;
  *
  * @since 0.1
  */
-final readonly class Preview implements Text
+final readonly class Preview extends TextEnvelope
 {
     public function __construct(
-        private Text $text,
+        Text $origin,
         private int $limit = 50
     ) {
+        parent::__construct($origin);
     }
 
     #[Override]
@@ -35,10 +37,10 @@ final readonly class Preview implements Text
             return '';
         }
 
-        if (new LengthOf($this->text)->isLessThanOrEqual($this->limit)) {
-            return $this->text->value();
+        if (new LengthOf($this->origin)->isLessThanOrEqual($this->limit)) {
+            return $this->origin->value();
         }
 
-        return new TruncatedRight($this->text, $this->limit - 1)->value() . '…';
+        return new TruncatedRight($this->origin, $this->limit - 1)->value() . '…';
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT

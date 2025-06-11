@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -8,6 +9,7 @@ declare(strict_types=1);
 namespace Paira\Tests\Shared\Internal\Text;
 
 use Paira\Shared\Internal\Text\PaddedRight;
+use Paira\Shared\Internal\Text\TextOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -18,7 +20,7 @@ final class PaddedRightTest extends TestCase
     {
         $this->assertSame(
             '12000',
-            new PaddedRight('12', 5, '0')->value()
+            new PaddedRight(new TextOf('12'), 5, '0')->value()
         );
     }
 
@@ -27,7 +29,7 @@ final class PaddedRightTest extends TestCase
     {
         $this->assertSame(
             'abc   ',
-            new PaddedRight('abc', 6, ' ')->value()
+            new PaddedRight(new TextOf('abc'), 6, ' ')->value()
         );
     }
 
@@ -36,7 +38,7 @@ final class PaddedRightTest extends TestCase
     {
         $this->assertSame(
             'foobar',
-            new PaddedRight('foobar', 4, '*')->value()
+            new PaddedRight(new TextOf('foobar'), 4, '*')->value()
         );
     }
 
@@ -45,7 +47,7 @@ final class PaddedRightTest extends TestCase
     {
         $this->assertSame(
             '...',
-            new PaddedRight('', 3, '.')->value()
+            new PaddedRight(new TextOf(''), 3, '.')->value()
         );
     }
 }

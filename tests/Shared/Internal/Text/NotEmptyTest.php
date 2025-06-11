@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -39,7 +40,7 @@ final class NotEmptyTest extends TestCase
     public function notEmptyThrowsException(string $input): void
     {
         $this->expectException(Exception::class);
-        new NotEmpty(new TextOf($input));
+        new NotEmpty(new TextOf($input))->value();
     }
 
     public static function emptyStringsProvider(): array

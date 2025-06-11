@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -27,6 +28,6 @@ final class UrlTest extends TestCase
     public function invalidUrlThrowsException(): void
     {
         $this->expectException(Exception::class);
-        new Url(new TextOf('not-a-valid-url'));
+        new Url(new TextOf('not-a-valid-url'))->value();
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -23,24 +24,21 @@ use Paira\Exception;
  *
  * @since 0.1
  */
-final readonly class NotEmpty implements Text
+final readonly class NotEmpty extends TextEnvelope
 {
     /**
      * @throws Exception
      */
-    public function __construct(private Text $text)
-    {
-        if (new Trimmed($text)->value() === '') {
-            throw new Exception(sprintf(
-                'Text cannot be empty or only whitespace. Got: "%s"',
-                $text->value()
-            ));
-        }
-    }
-
     #[Override]
     public function value(): string
     {
-        return $this->text->value();
+        if (new Trimmed($this->origin)->value() === '') {
+            throw new Exception(sprintf(
+                'Text cannot be empty or only whitespace. Got: "%s"',
+                $this->origin->value()
+            ));
+        }
+
+        return $this->origin->value();
     }
 }

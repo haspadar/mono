@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -28,6 +29,6 @@ final class EmailTest extends TestCase
     public function invalidEmailThrowsException(): void
     {
         $this->expectException(Exception::class);
-        new Email(new TextOf('not-an-email'));
+        new Email(new TextOf('not-an-email'))->value();
     }
 }

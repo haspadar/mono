@@ -1,4 +1,5 @@
 <?php
+
 /*
  * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
  * SPDX-License-Identifier: MIT
@@ -20,15 +21,11 @@ use Override;
  *
  * @since 0.1
  */
-final readonly class Trimmed implements Text
+final readonly class Trimmed extends TextEnvelope
 {
-    public function __construct(private Text $text)
-    {
-    }
-
     #[Override]
     public function value(): string
     {
-        return trim($this->text->value());
+        return trim($this->origin->value());
     }
 }

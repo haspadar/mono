@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Iterable;
 
+use Closure;
+
 /**
  * A sequence where each item is the result of applying a function to the original items.
  *
@@ -24,10 +26,10 @@ namespace Paira\Shared\Internal\Iterable;
 final class Mapped extends SequenceEnvelope
 {
     /**
-     * @param callable(TIn): TOut $fn
+     * @param Closure(TIn): TOut $fn
      * @param Sequence<TIn> $sequence
      */
-    public function __construct(callable $fn, Sequence $sequence)
+    public function __construct(Closure $fn, Sequence $sequence)
     {
         parent::__construct(new SequenceOf(
             array_values(array_map($fn, iterator_to_array($sequence->getIterator())))

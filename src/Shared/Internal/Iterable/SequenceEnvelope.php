@@ -26,11 +26,13 @@ abstract class SequenceEnvelope implements Sequence
     }
 
     /**
-     * @return Iterator<int, T>
+     * @return Iterator<T>
      */
     #[\Override]
     public function getIterator(): Iterator
     {
-        return $this->origin->getIterator();
+        foreach ($this->origin as $key => $value) {
+            yield $key => $value;
+        }
     }
 }

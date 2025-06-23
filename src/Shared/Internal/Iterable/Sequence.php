@@ -12,7 +12,7 @@ use IteratorAggregate;
 use Traversable;
 
 /**
- * A lazily-evaluated sequence of values.
+ * A sequence of values that can be iterated in a uniform way.
  *
  * @template T
  * @extends IteratorAggregate<int, T>

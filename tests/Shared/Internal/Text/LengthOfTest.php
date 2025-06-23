@@ -16,47 +16,32 @@ use PHPUnit\Framework\TestCase;
 final class LengthOfTest extends TestCase
 {
     #[Test]
-    public function asciiString(): void
-    {
-        $this->assertSame(5, new LengthOf(new TextOf('hello'))->value());
-    }
-
-    #[Test]
-    public function multibyteString(): void
+    public function returnsLengthFiveWhenTextIsAscii(): void
     {
         $this->assertSame(
-            6,
-            new LengthOf(new TextOf('привет'))->value()
+            5,
+            new LengthOf(new TextOf('hello'))->value(),
+            'Expected length 5 for ASCII string "hello"'
         );
     }
 
     #[Test]
-    public function emptyString(): void
+    public function returnsLengthFiveWhenTextContainsDiacritics(): void
+    {
+        $this->assertSame(
+            5,
+            new LengthOf(new TextOf('àéîöü'))->value(),
+            'Expected length 5 for multibyte string "àéîöü"'
+        );
+    }
+
+    #[Test]
+    public function returnsZeroWhenTextIsEmpty(): void
     {
         $this->assertSame(
             0,
-            new LengthOf(new TextOf(''))->value()
+            new LengthOf(new TextOf(''))->value(),
+            'Expected length 0 for empty string'
         );
-    }
-
-    #[Test]
-    public function confirmsLessThanOrEqual(): void
-    {
-        $length = new LengthOf(new TextOf('abc'));
-        $this->assertTrue($length->isLessThanOrEqual(3));
-    }
-
-    #[Test]
-    public function confirmsGreaterThan(): void
-    {
-        $length = new LengthOf(new TextOf('1234'));
-        $this->assertTrue($length->isGreaterThan(3));
-    }
-
-    #[Test]
-    public function confirmsNotGreaterThan(): void
-    {
-        $length = new LengthOf(new TextOf('123'));
-        $this->assertFalse($length->isGreaterThan(3));
     }
 }

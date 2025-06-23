@@ -14,17 +14,18 @@ namespace Paira\Shared\Internal\Text;
  * Converts the given text to lowercase using multibyte support.
  *
  * Example:
- * $text = new Lowercased(new TextOf('ЎСЁ БУДЗЕ!'));
- * echo $text->value(); // 'ўсё будзе!'
+ * $text = new Lowercased(new TextOf('CAFÉ & TÜRKİYE'));
+ * echo $text->value(); // 'café & türkiye'
  *
  * @psalm-pure
  * @since 0.1
  */
 final readonly class Lowercased extends TextEnvelope
 {
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $origin)
     {
-        return mb_strtolower($this->origin->value());
+        parent::__construct(
+            new TextOf(mb_strtolower($origin->value()))
+        );
     }
 }

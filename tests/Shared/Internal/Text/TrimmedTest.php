@@ -16,20 +16,22 @@ use PHPUnit\Framework\TestCase;
 final class TrimmedTest extends TestCase
 {
     #[Test]
-    public function trimsLeadingAndTrailingSpaces(): void
+    public function returnsTextWithoutLeadingAndTrailingSpaces(): void
     {
         $this->assertSame(
             'hello  world',
-            new Trimmed(new TextOf('  hello  world  '))->value()
+            new Trimmed(new TextOf('  hello  world  '))->value(),
+            'Expected leading and trailing spaces to be removed'
         );
     }
 
     #[Test]
-    public function emptyStringRemainsEmpty(): void
+    public function returnsEmptyStringWhenInputIsWhitespaceOnly(): void
     {
         $this->assertSame(
             '',
-            new Trimmed(new TextOf('   '))->value()
+            new Trimmed(new TextOf('   '))->value(),
+            'Expected empty string when input contains only spaces'
         );
     }
 }

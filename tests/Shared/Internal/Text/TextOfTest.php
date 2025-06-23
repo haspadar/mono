@@ -15,8 +15,22 @@ use PHPUnit\Framework\TestCase;
 final class TextOfTest extends TestCase
 {
     #[Test]
-    public function returnsEqualsString(): void
+    public function returnsOriginalTextWhenValueIsRequested(): void
     {
-        $this->assertSame('hello', new TextOf('hello')->value());
+        $this->assertSame(
+            'hello',
+            new TextOf('hello')->value(),
+            'Expected TextOf to return original string "hello"'
+        );
+    }
+
+    #[Test]
+    public function castsToStringCorrectly(): void
+    {
+        $this->assertSame(
+            'world',
+            (string) new TextOf('world'),
+            'Expected TextOf to cast to "world"'
+        );
     }
 }

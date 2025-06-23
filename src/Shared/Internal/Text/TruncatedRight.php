@@ -8,8 +8,10 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
+use Paira\Exception;
+
 /**
- * String truncated from the right.
+ * {@see Text} truncated from the right.
  *
  * Uses {@see mb_substr()} to return at most `$length` characters from the left.
  *
@@ -20,19 +22,16 @@ namespace Paira\Shared\Internal\Text;
  * @psalm-pure
  * @since 0.1
  */
-
 final readonly class TruncatedRight extends TextEnvelope
 {
-    public function __construct(
-        Text $text,
-        private int  $length
-    ) {
-        parent::__construct($text);
-    }
-
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $text, int $length)
     {
-        return mb_substr($this->origin->value(), 0, $this->length);
+        if ($length < 0) {
+            throw new Exception('Length must be non-negative');
+        }
+
+        parent::__construct(
+            new TextOf(mb_substr($text->value(), 0, $length))
+        );
     }
 }

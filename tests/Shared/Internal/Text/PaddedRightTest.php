@@ -16,38 +16,42 @@ use PHPUnit\Framework\TestCase;
 final class PaddedRightTest extends TestCase
 {
     #[Test]
-    public function padsWithZerosToRight(): void
+    public function returnsTextPaddedWithZerosToRight(): void
     {
         $this->assertSame(
             '12000',
-            new PaddedRight(new TextOf('12'), 5, '0')->value()
+            new PaddedRight(new TextOf('12'), 5, '0')->value(),
+            'Expected "12" padded to "12000" with "0"'
         );
     }
 
     #[Test]
-    public function padsWithSpacesToRight(): void
+    public function returnsTextPaddedWithSpacesToRight(): void
     {
         $this->assertSame(
             'abc   ',
-            new PaddedRight(new TextOf('abc'), 6, ' ')->value()
+            new PaddedRight(new TextOf('abc'), 6, ' ')->value(),
+            'Expected "abc" padded to "abc   " with spaces'
         );
     }
 
     #[Test]
-    public function notPadsForLong(): void
+    public function returnsSameTextWhenLengthExceedsPadding(): void
     {
         $this->assertSame(
             'foobar',
-            new PaddedRight(new TextOf('foobar'), 4, '*')->value()
+            new PaddedRight(new TextOf('foobar'), 4, '*')->value(),
+            'Expected "foobar" to remain unchanged when already longer'
         );
     }
 
     #[Test]
-    public function padsEmptyString(): void
+    public function returnsPaddingOnlyWhenTextIsEmpty(): void
     {
         $this->assertSame(
             '...',
-            new PaddedRight(new TextOf(''), 3, '.')->value()
+            new PaddedRight(new TextOf(''), 3, '.')->value(),
+            'Expected empty string padded to "..." with "."'
         );
     }
 }

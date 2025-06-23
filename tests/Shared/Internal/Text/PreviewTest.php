@@ -16,65 +16,72 @@ use PHPUnit\Framework\TestCase;
 final class PreviewTest extends TestCase
 {
     #[Test]
-    public function returnsOriginalTextWhenShorterThanLimit(): void
+    public function returnsOriginalTextWhenLengthIsLessThanLimit(): void
     {
         $this->assertSame(
             'short',
-            new Preview(new TextOf('short'), 10)->value()
+            new Preview(new TextOf('short'), 10)->value(),
+            'Expected original text "short" when under limit'
         );
     }
 
     #[Test]
-    public function returnsOriginalTextWhenEqualToLimit(): void
+    public function returnsOriginalTextWhenLengthEqualsLimit(): void
     {
         $this->assertSame(
             'exactly10!',
-            new Preview(new TextOf('exactly10!'), 10)->value()
+            new Preview(new TextOf('exactly10!'), 10)->value(),
+            'Expected original text "exactly10!" when equal to limit'
         );
     }
 
     #[Test]
-    public function shortensTextAndAddsEllipsisWhenExceedsLimit(): void
+    public function returnsTruncatedTextWithEllipsisWhenTextExceedsLimit(): void
     {
         $this->assertSame(
             'this is a…',
-            new Preview(new TextOf('this is a long string'), 10)->value()
+            new Preview(new TextOf('this is a long string'), 10)->value(),
+            'Expected "this is a…" when input exceeds limit'
         );
     }
 
     #[Test]
-    public function worksWithMultibyteCharacters(): void
+    public function returnsTruncatedTextWithEllipsisWhenTextContainsMultibyteCharacters(): void
     {
         $this->assertSame(
             'Вітаю…',
-            new Preview(new TextOf('Вітаю, даражэнькі'), 6)->value()
+            new Preview(new TextOf('Вітаю, даражэнькі'), 6)->value(),
+            'Expected "Вітаю…" for multibyte input with limit 6'
         );
     }
 
     #[Test]
-    public function truncatesToDefaultMaxLengthOf50(): void
+    public function returnsTruncatedTextWithEllipsisWhenDefaultLimitIsApplied(): void
     {
         $this->assertSame(
             str_repeat('a', 49) . '…',
-            new Preview(new TextOf(str_repeat('a', 100)))->value()
+            new Preview(new TextOf(str_repeat('a', 100)))->value(),
+            'Expected 49 "a" + ellipsis when using default limit'
         );
     }
 
     #[Test]
-    public function returnsOnlyEllipsisIfLimitIsOne(): void
+    public function returnsOnlyEllipsisWhenLimitIsOne(): void
     {
         $this->assertSame(
             '…',
-            new Preview(new TextOf('abcdef'), 1)->value()
+            new Preview(new TextOf('abcdef'), 1)->value(),
+            'Expected only ellipsis when limit is 1'
         );
     }
 
     #[Test]
-    public function returnsEmptyStringIfLimitIsZero(): void
+    public function returnsEmptyStringWhenLimitIsZero(): void
     {
         $this->assertSame(
             '',
-            new Preview(new TextOf('abcdef'), 0)->value()
+            new Preview(new TextOf('abcdef'), 0)->value(),
+            'Expected empty string when limit is 0'
         );
     }
 }

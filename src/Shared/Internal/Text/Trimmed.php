@@ -22,9 +22,10 @@ namespace Paira\Shared\Internal\Text;
  */
 final readonly class Trimmed extends TextEnvelope
 {
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $origin)
     {
-        return trim($this->origin->value());
+        parent::__construct(
+            new TextOf(trim($origin->value()))
+        );
     }
 }

@@ -22,7 +22,7 @@ use Traversable;
 interface Sequence extends IteratorAggregate
 {
     /**
-     * @return Traversable<int, T>
+     * @return \Iterator<int, T>
      */
     #[\Override]
     public function getIterator(): Traversable;

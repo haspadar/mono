@@ -24,5 +24,6 @@ interface Sequence extends IteratorAggregate
     /**
      * @return \Iterator<int, T>
      */
+    #[\Override]
     public function getIterator(): Traversable;
 }

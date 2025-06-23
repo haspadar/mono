@@ -13,6 +13,10 @@ use Paira\Shared\Internal\Text\Text;
 /**
  * {@see Logic} that returns true if a {@see Text} is a valid URL.
  *
+ * Example:
+ * new IsUrl(new TextOf("https://example.com")) → true
+ * new IsUrl(new TextOf("not-a-url")) → false
+ *
  * @psalm-pure
  */
 final readonly class IsUrl extends LogicEnvelope

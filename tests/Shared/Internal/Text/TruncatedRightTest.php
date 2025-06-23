@@ -54,4 +54,13 @@ final class TruncatedRightTest extends TestCase
             'Expected empty string when limit is zero'
         );
     }
+
+    #[Test]
+    public function throwsWhenLengthIsNegative(): void
+    {
+        $this->expectException(\Paira\Exception::class);
+        $this->expectExceptionMessage('Length must be non-negative');
+
+        new TruncatedRight(new TextOf('abc'), -1);
+    }
 }

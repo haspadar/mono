@@ -21,27 +21,43 @@ final class ThrowsIfTest extends TestCase
     public function throwsWhenConditionIsTrue(): void
     {
         $this->expectException(Exception::class);
-        new ThrowsIf(new Yes(), '')->whenTrue();
+        $this->expectExceptionMessage('True condition triggered');
+        new ThrowsIf(new Yes(), 'True condition triggered')->whenTrue();
     }
 
     #[Test]
     public function throwsWhenConditionIsFalse(): void
     {
         $this->expectException(Exception::class);
-        new ThrowsIf(new No(), '')->whenFalse();
+        $this->expectExceptionMessage('False condition triggered');
+        new ThrowsIf(new No(), 'False condition triggered')->whenFalse();
     }
 
     #[Test]
-    public function doesNotThrowWhenCheckingTrueButConditionIsFalse(): void
+    public function returnsSilentlyWhenTrueCheckIsFalse(): void
     {
-        new ThrowsIf(new No(), '')->whenTrue();
+        new ThrowsIf(new No(), 'No exception expected')->whenTrue();
         $this->assertTrue(true, 'Expected no exception to be thrown');
     }
 
     #[Test]
-    public function doesNotThrowWhenCheckingFalseButConditionIsTrue(): void
+    public function returnsSilentlyWhenFalseCheckIsTrue(): void
     {
-        new ThrowsIf(new Yes(), '')->whenFalse();
+        new ThrowsIf(new Yes(), 'No exception expected')->whenFalse();
         $this->assertTrue(true, 'Expected no exception to be thrown');
+    }
+
+    #[Test]
+    public function skipsExceptionWhenTrueConditionIsFalse(): void
+    {
+        new ThrowsIf(new No(), 'no exception')->whenTrue();
+        $this->addToAssertionCount(1);
+    }
+
+    #[Test]
+    public function skipsExceptionWhenFalseConditionIsTrue(): void
+    {
+        new ThrowsIf(new Yes(), 'no exception')->whenFalse();
+        $this->addToAssertionCount(1);
     }
 }

@@ -38,6 +38,9 @@ final class IsEmailTest extends TestCase
             'simple' => ['user@example.com'],
             'with subdomain' => ['name.surname@sub.domain.org'],
             'numeric' => ['user123@domain.net'],
+            'with plus' => ['user+tag@example.com'],
+            'multiple dots' => ['user@sub.domain.example.com'],
+            'hyphenated domain' => ['user@my-domain.com'],
         ];
     }
 

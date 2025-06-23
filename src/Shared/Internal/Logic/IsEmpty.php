@@ -11,7 +11,7 @@ namespace Paira\Shared\Internal\Logic;
 use Paira\Shared\Internal\Text\Trimmed;
 
 /**
- * {@see Logic} that returns true if the text is not empty or whitespace-only.
+ * {@see Logic} that returns true if the text is empty or whitespace-only.
  *
  * @psalm-pure
  */

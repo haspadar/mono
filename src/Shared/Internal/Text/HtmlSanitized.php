@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
-namespace Paira\Shared\Internal\Text;
-
 /**
  * {@see Text} sanitized for HTML output.
  *

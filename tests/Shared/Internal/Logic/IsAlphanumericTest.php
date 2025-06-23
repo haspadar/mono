@@ -12,12 +12,12 @@ use PHPUnit\Framework\TestCase;
 
 final class IsAlphanumericTest extends TestCase
 {
-    #[Test]
-    public function returnsTrueWhenTextIsAlphanumeric(): void
+    #[DataProvider('alphanumericStrings')]
+    public function returnsTrueWhenTextIsAlphanumeric(string $input): void
     {
         $this->assertTrue(
-            new IsAlphanumeric(new TextOf('abc123XYZ'))->value(),
-            'Expected true for alphanumeric string "abc123XYZ"'
+            new IsAlphanumeric(new TextOf($input))->value(),
+            'Expected true for alphanumeric string "' . $input . '"'
         );
     }
 
@@ -40,6 +40,17 @@ final class IsAlphanumericTest extends TestCase
             'contains newline' => ["abc123\n"],
             'contains tab' => ["\tabc123"],
             'contains punctuation' => ['abc.123'],
+        ];
+    }
+
+    public static function alphanumericStrings(): array
+    {
+        return [
+            'mixed' => ['abc123XYZ'],
+            'letters only' => ['abcXYZ'],
+            'numbers only' => ['12345'],
+            'single letter' => ['a'],
+            'single number' => ['1'],
         ];
     }
 }

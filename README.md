@@ -8,7 +8,7 @@
 
 [![codecov](https://codecov.io/github/haspadar/paira/branch/main/graph/bundle/default/badge.svg)](https://codecov.io/github/haspadar/paira)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/haspadar/paira?utm_source=oss&utm_medium=github&utm_campaign=haspadar%2Fpaira&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://coderabbit.ai)
-[![CI](https://github.com/haspadar/paira/actions/workflows/ci.yml/badge.svg)](https://github.com/haspadar/paira/actions/workflows/ci.yml)
+[![GitHub Actions CI](https://github.com/haspadar/paira/actions/workflows/ci.yml/badge.svg)](https://github.com/haspadar/paira/actions/workflows/ci.yml)
 
 > ⚠️ Please [install the Codecov GitHub App](https://github.com/apps/codecov) to ensure uploads and comments are reliably processed.
 

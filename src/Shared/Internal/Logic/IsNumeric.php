@@ -26,6 +26,8 @@ final readonly class IsNumeric extends LogicEnvelope
     #[\Override]
     public function value(): bool
     {
-        return is_numeric($this->text->value());
+        $value = $this->text->value();
+
+        return is_numeric($value) && trim($value) === $value;
     }
 }

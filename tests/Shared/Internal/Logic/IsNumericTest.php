@@ -50,4 +50,31 @@ final class IsNumericTest extends TestCase
             'Expected false for non-numeric string "abc"'
         );
     }
+
+    #[Test]
+    public function returnsFalseWhenTextIsEmpty(): void
+    {
+        $this->assertFalse(
+            new IsNumeric(new TextOf(''))->value(),
+            'Expected false for empty string'
+        );
+    }
+
+    #[Test]
+    public function returnsFalseWhenTextContainsSpaces(): void
+    {
+        $this->assertFalse(
+            new IsNumeric(new TextOf(' 123 '))->value(),
+            'Expected false for string with spaces'
+        );
+    }
+
+    #[Test]
+    public function returnsTrueWhenTextIsNegativeNumber(): void
+    {
+        $this->assertTrue(
+            new IsNumeric(new TextOf('-123'))->value(),
+            'Expected true for negative number string'
+        );
+    }
 }

@@ -32,4 +32,22 @@ final class IsUrlTest extends TestCase
             'Expected false for invalid URL "not-a-valid-url"'
         );
     }
+
+    #[Test]
+    public function returnsTrueForHttpUrl(): void
+    {
+        $this->assertTrue(
+            new IsUrl(new TextOf('http://example.com'))->value(),
+            'Expected true for HTTP URL'
+        );
+    }
+
+    #[Test]
+    public function returnsFalseForEmptyString(): void
+    {
+        $this->assertFalse(
+            new IsUrl(new TextOf(''))->value(),
+            'Expected false for empty string'
+        );
+    }
 }

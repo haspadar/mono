@@ -8,9 +8,6 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Logic;
 
-use Override;
-use Paira\Shared\Internal\Text\Text;
-
 /**
  * {@see Logic} that returns true if text contains only alphanumeric characters (A–Z, a–z, 0–9).
  *
@@ -21,7 +18,7 @@ use Paira\Shared\Internal\Text\Text;
  */
 final readonly class IsAlphanumeric extends LogicEnvelope
 {
-    #[Override]
+    #[\Override]
     public function value(): bool
     {
         return ctype_alnum($this->text->value());

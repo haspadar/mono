@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Paira\Shared\Internal\Text;
 
+use Paira\Exception;
+
 /**
  * {@see Text} truncated from the right.
  *
@@ -24,6 +26,10 @@ final readonly class TruncatedRight extends TextEnvelope
 {
     public function __construct(Text $text, int $length)
     {
+        if ($length < 0) {
+            throw new Exception('Length must be non-negative');
+        }
+
         parent::__construct(
             new TextOf(mb_substr($text->value(), 0, $length))
         );

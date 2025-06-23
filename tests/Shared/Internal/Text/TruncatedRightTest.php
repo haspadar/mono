@@ -16,38 +16,42 @@ use PHPUnit\Framework\TestCase;
 final class TruncatedRightTest extends TestCase
 {
     #[Test]
-    public function truncatesLong(): void
+    public function returnsTruncatedTextWhenLengthExceedsLimit(): void
     {
         $this->assertSame(
             'abc',
-            new TruncatedRight(new TextOf('abcdef'), 3)->value()
+            new TruncatedRight(new TextOf('abcdef'), 3)->value(),
+            'Expected text "abcdef" to be truncated to "abc"'
         );
     }
 
     #[Test]
-    public function notTruncatedShort(): void
+    public function returnsOriginalTextWhenLengthIsBelowLimit(): void
     {
         $this->assertSame(
             'abc',
-            new TruncatedRight(new TextOf('abc'), 5)->value()
+            new TruncatedRight(new TextOf('abc'), 5)->value(),
+            'Expected text "abc" to remain unchanged when under limit'
         );
     }
 
     #[Test]
-    public function returnsEmpty(): void
+    public function returnsEmptyStringWhenInputIsEmpty(): void
     {
         $this->assertSame(
             '',
-            new TruncatedRight(new TextOf(''), 5)->value()
+            new TruncatedRight(new TextOf(''), 5)->value(),
+            'Expected empty string when input is empty'
         );
     }
 
     #[Test]
-    public function emptyIfZeroLength(): void
+    public function returnsEmptyStringWhenLimitIsZero(): void
     {
         $this->assertSame(
             '',
-            new TruncatedRight(new TextOf('abc'), 0)->value()
+            new TruncatedRight(new TextOf('abc'), 0)->value(),
+            'Expected empty string when limit is zero'
         );
     }
 }

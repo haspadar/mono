@@ -20,17 +20,19 @@ namespace Paira\Shared\Internal\Text;
  * echo $text->value(); // 'John &amp; &quot;Jane&quot;'
  *
  * @psalm-pure
- * @since 0.1
  */
 final readonly class HtmlSanitized extends TextEnvelope
 {
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $origin)
     {
-        return htmlspecialchars(
-            strip_tags($this->origin->value()),
-            ENT_QUOTES | ENT_HTML5,
-            'UTF-8'
+        parent::__construct(
+            new TextOf(
+                htmlspecialchars(
+                    strip_tags($origin->value()),
+                    ENT_QUOTES | ENT_HTML5,
+                    'UTF-8'
+                )
+            )
         );
     }
 }

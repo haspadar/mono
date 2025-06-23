@@ -11,8 +11,6 @@ namespace Paira\Shared\Internal\Text;
 /**
  * Length of {@see Text}, measured in multibyte characters.
  *
- * Calculates and compares the number of characters in a text.
- *
  * Example:
  * $length = new LengthOf(new TextOf('Прывітанне'));
  * echo $length->value(); // 10
@@ -22,22 +20,12 @@ namespace Paira\Shared\Internal\Text;
  */
 final readonly class LengthOf
 {
-    public function __construct(protected Text $origin)
+    public function __construct(private Text $origin)
     {
     }
 
     public function value(): int
     {
         return mb_strlen($this->origin->value());
-    }
-
-    public function isLessThanOrEqual(int $max): bool
-    {
-        return $this->value() <= $max;
-    }
-
-    public function isGreaterThan(int $max): bool
-    {
-        return $this->value() > $max;
     }
 }

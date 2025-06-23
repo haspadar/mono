@@ -14,17 +14,17 @@ namespace Paira\Shared\Internal\Text;
  * Converts the given text to uppercase using multibyte support.
  *
  * Example:
- * $text = new Uppercased(new TextOf('hello Ў'));
- * echo $text->value(); // 'HELLO Ў'
+ * $text = new Uppercased(new TextOf('touché résumé'));
+ * echo $text->value(); // 'TOUCHÉ RÉSUMÉ'
  *
  * @psalm-pure
- * @since 0.1
  */
 final readonly class Uppercased extends TextEnvelope
 {
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $origin)
     {
-        return mb_strtoupper($this->origin->value());
+        parent::__construct(
+            new TextOf(mb_strtoupper($origin->value()))
+        );
     }
 }

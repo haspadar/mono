@@ -12,17 +12,22 @@ namespace Paira\Shared\Internal\Text;
  * Text of a plain string.
  *
  * @psalm-pure
- * @since 0.1
  */
 final readonly class TextOf implements Text
 {
-    public function __construct(private string $origin)
+    public function __construct(private string $value)
     {
     }
 
     #[\Override]
     public function value(): string
     {
-        return $this->origin;
+        return $this->value;
+    }
+
+    #[\Override]
+    public function __toString(): string
+    {
+        return $this->value;
     }
 }

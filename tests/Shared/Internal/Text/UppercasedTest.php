@@ -16,29 +16,32 @@ use PHPUnit\Framework\TestCase;
 final class UppercasedTest extends TestCase
 {
     #[Test]
-    public function convertsLowercaseToUppercase(): void
+    public function returnsUppercaseWhenTextIsLowercase(): void
     {
         $this->assertSame(
             'HELLO',
-            new Uppercased(new TextOf('hello'))->value()
+            new Uppercased(new TextOf('hello'))->value(),
+            'Expected "hello" to be converted to "HELLO"'
         );
     }
 
     #[Test]
-    public function handlesMixedCase(): void
+    public function returnsUppercaseWhenTextIsMixedCase(): void
     {
         $this->assertSame(
             'HELLO WORLD',
-            new Uppercased(new TextOf('HeLLo WoRLD'))->value()
+            new Uppercased(new TextOf('HeLLo WoRLD'))->value(),
+            'Expected "HeLLo WoRLD" to be converted to "HELLO WORLD"'
         );
     }
 
     #[Test]
-    public function supportsMultibyteCharacters(): void
+    public function returnsUppercaseWhenTextContainsDiacritics(): void
     {
         $this->assertSame(
-            'ПРИВЕТ',
-            new Uppercased(new TextOf('привет'))->value()
+            'ÀÉÎÖÜ',
+            new Uppercased(new TextOf('àéîöü'))->value(),
+            'Expected "àéîöü" to be converted to "ÀÉÎÖÜ"'
         );
     }
 }

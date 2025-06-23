@@ -12,7 +12,6 @@ namespace Paira\Shared\Internal\Text;
  * Envelope for {@see Text}, delegating all calls to the origin.
  *
  * @codeCoverageIgnore
- * @since 0.1
  */
 abstract readonly class TextEnvelope implements Text
 {
@@ -20,6 +19,13 @@ abstract readonly class TextEnvelope implements Text
     {
     }
 
+    #[\Override]
+    public function value(): string
+    {
+        return $this->origin->value();
+    }
+
+    #[\Override]
     public function __toString(): string
     {
         return $this->value();

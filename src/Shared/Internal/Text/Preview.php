@@ -22,24 +22,16 @@ namespace Paira\Shared\Internal\Text;
  */
 final readonly class Preview extends TextEnvelope
 {
-    public function __construct(
-        Text $origin,
-        private int $limit = 50
-    ) {
-        parent::__construct($origin);
-    }
-
-    #[\Override]
-    public function value(): string
+    public function __construct(Text $origin, int $limit = 50)
     {
-        if ($this->limit < 1) {
-            return '';
+        if ($limit < 1) {
+            $value = '';
+        } elseif (new LengthOf($origin)->value() <= $limit) {
+            $value = $origin->value();
+        } else {
+            $value = new TruncatedRight($origin, $limit - 1)->value() . '…';
         }
 
-        if (new LengthOf($this->origin)->isLessThanOrEqual($this->limit)) {
-            return $this->origin->value();
-        }
-
-        return new TruncatedRight($this->origin, $this->limit - 1)->value() . '…';
+        parent::__construct(new TextOf($value));
     }
 }

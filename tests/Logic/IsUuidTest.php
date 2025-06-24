@@ -16,8 +16,8 @@ final class IsUuidTest extends TestCase
     public function returnsTrueWhenTextIsValidUuid(): void
     {
         $this->assertTrue(
-            new IsUuid(new TextOf('123e4567-e89b-12d3-a456-426614174000'))->value(),
-            'Expected true for valid UUID "123e4567-e89b-12d3-a456-426614174000"'
+            new IsUuid(new TextOf('123e4567-E89B-12d3-a456-426614174000'))->value(),
+            'Expected true for valid UUID "123e4567-E89B-12d3-a456-426614174000"'
         );
     }
 

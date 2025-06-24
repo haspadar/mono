@@ -32,7 +32,7 @@ final class Mapped extends SequenceEnvelope
     public function __construct(Closure $fn, Sequence $sequence)
     {
         parent::__construct(new SequenceOf(
-            array_values(array_map($fn, iterator_to_array($sequence->getIterator())))
+            array_map($fn, iterator_to_array($sequence->getIterator()))
         ));
     }
 }

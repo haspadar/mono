@@ -31,8 +31,6 @@ abstract class SequenceEnvelope implements Sequence
     #[\Override]
     public function getIterator(): Iterator
     {
-        foreach ($this->origin as $key => $value) {
-            yield $key => $value;
-        }
+        return $this->origin->getIterator();
     }
 }

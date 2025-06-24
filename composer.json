@@ -58,6 +58,14 @@
       "@test-coverage",
       "@metrics",
       "@refactor"
+    ],
+    "build": [
+      "@fix",
+      "@refactor",
+      "@analyse",
+      "@psalm",
+      "@test",
+      "@mutations"
     ]
   },
   "config": {

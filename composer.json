@@ -51,13 +51,21 @@
     "test-refactor": "rector --dry-run",
     "quality": [
       "@fix-test",
-      "@analyse",
+      "@analyze",
       "@psalm",
       "@test",
       "@infection",
       "@test-coverage",
       "@metrics",
       "@refactor"
+    ],
+    "build": [
+      "@fix",
+      "@refactor",
+      "@analyze",
+      "@psalm",
+      "@test",
+      "@mutations"
     ]
   },
   "config": {

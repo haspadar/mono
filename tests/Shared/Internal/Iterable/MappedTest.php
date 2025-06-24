@@ -26,4 +26,14 @@ final class MappedTest extends TestCase
             'Expected each number to be doubled'
         );
     }
+
+    #[Test]
+    public function preservesListIndexing(): void
+    {
+        $result = iterator_to_array(
+            new Mapped(fn (int $n) => $n * 2, new SequenceOf([1 => 1, 2 => 2, 3 => 3]))
+        );
+
+        $this->assertSame([2, 4, 6], $result, 'Keys should be reset to sequential integers');
+    }
 }

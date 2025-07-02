@@ -1,19 +1,16 @@
 {
-  "name": "paira/paira",
-  "description": "Asynchronous P2P matching engine for pairing withdrawals with deposits",
+  "name": "haspadar/brick",
+  "description": "Primitive wrappers for PHP: strong typing for strings, ints, arrays, and more",
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": "^8.4",
-    "ramsey/uuid": "^4.8",
-    "fakerphp/faker": "^1.24"
+    "php": "^8.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "phpunit/phpunit": "^12.1",
     "phpstan/phpstan": "^2.1",
     "nunomaduro/collision": "^8.8",
-    "deptrac/deptrac": "^3.0",
     "vimeo/psalm": "^6.10",
     "infection/infection": "^0.29.14",
     "phpmetrics/phpmetrics": "^3.0",
@@ -24,12 +21,12 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Paira\\": "src/"
+      "Brick\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Paira\\Tests\\": "tests/"
+      "Brick\\Tests\\": "tests/"
     }
   },
   "scripts": {
@@ -43,7 +40,6 @@
     "fix": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix",
     "fix-test": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run --diff",
     "fix-changed": "git diff --name-only origin/main...HEAD | grep '\\.php$' | xargs -r vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes",
-    "deptrac": "deptrac analyse --formatter=console",
     "infection": "XDEBUG_MODE=coverage vendor/bin/infection --threads=4 --only-covered",
     "mutations": "php -d memory_limit=1024M ./vendor/bin/infection --show-mutations",
     "metrics": "phpmetrics --report-html=build/phpmetrics-report src",

@@ -1,0 +1,29 @@
+<?php
+
+/*
+ * SPDX-FileCopyrightText: Copyright (c) 2025 Kanstantsin Mesnik
+ * SPDX-License-Identifier: MIT
+ */
+declare(strict_types=1);
+
+namespace Brick\Tests\Iterable;
+
+use Brick\Iterable\Mapped;
+use Brick\Iterable\SequenceOf;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
+
+final class MappedTest extends TestCase
+{
+    #[Test]
+    public function appliesFunctionToEachItem(): void
+    {
+        $this->assertSame(
+            [2, 4, 6],
+            iterator_to_array(
+                new Mapped(fn (int $n) => $n * 2, new SequenceOf([1, 2, 3]))
+            ),
+            'Expected each number to be doubled'
+        );
+    }
+}

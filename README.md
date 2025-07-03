@@ -20,7 +20,7 @@
 
 Instead of passing around loose values, you use small, self-contained wrappers like:
 
-- `NonBlank`, `Trimmed`, `TruncatedRight` (strings)
+- `Lowercased`, `Trimmed`, `TruncatedRight` (strings)
 - `Yes`, `IsEmail`, `ThrowsIf` (logic)
 - `Mapped`, `SequenceOf` (collections)
 
@@ -43,25 +43,24 @@ Inspired by [Elegant Objects](https://www.yegor256.com/elegant-objects.html) and
 ## ✨ Example
 
 ```php
-use Solo\Text\NonBlank;
+use Solo\Text\Lowercased;
 use Solo\Text\TruncatedRight;
 use Solo\Text\Trimmed;
 
-$text = new NonBlank(
-    new TruncatedRight(
-        new Trimmed("  Hello, world!  "),
-        5
-    )
+$text = new TruncatedRight(
+    new Lowercased(
+        new Trimmed("  Hello, world!  ")
+    ),
+    5
 );
 
-echo $text->toString(); // "Hello"
+echo $text->toString(); // "hello"
 ```
 
 Each wrapper adds one behavior:
 
 - `Trimmed` removes whitespace
 - `TruncatedRight` shortens the string
-- `NonBlank` ensures the result is not empty
 
 All wrappers implement the same interface and can be freely composed.
 
@@ -69,7 +68,7 @@ All wrappers implement the same interface and can be freely composed.
 
 ## 🧱 Modules
 
-- **Text** — `Trimmed`, `Uppercased`, `TruncatedRight`, `HtmlSanitized`, `LengthOf`, `Preview`, `TextOf`, `NonBlank`
+- **Text** — `Trimmed`, `Uppercased`, `Lowercased`, `TruncatedRight`, `HtmlSanitized`, `LengthOf`, `Preview`, `TextOf`
 - **Logic** — `Yes`, `No`, `ThrowsIf`, `IsEmpty`, `IsEmail`, `IsUuid`, `LogicEnvelope`
 - **Iterable** — `Sequence`, `SequenceOf`, `Mapped`, `Filtered`
 - **Number** — *(coming soon)* `Positive`, `NonZero`, `Rounded`, etc.

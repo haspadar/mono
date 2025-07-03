@@ -1,7 +1,0 @@
-deptrac:
-  paths:
-    - ./src
-
-  layers:
-
-  ruleset:

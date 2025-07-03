@@ -20,14 +20,47 @@ jobs:
           php-version: '8.4'
           coverage: xdebug
 
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Validate composer.json
         run: composer validate
 
-      - name: Run full quality pipeline
-        run: composer ci-quality
+      - name: Style check
+        run: composer fix-test
+
+      - name: PHPStan
+        run: composer analyze
+
+      - name: Psalm
+        run: composer psalm
+
+      - name: PHPUnit
+        run: composer test
+
+      - name: Coverage
+        run: composer test-coverage
+
+      - name: Infection
+        run: composer infection
+
+      - name: Metrics
+        run: composer metrics
+
+      - name: Rector (dry-run)
+        run: composer test-refactor
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5

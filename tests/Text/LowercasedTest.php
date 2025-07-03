@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Text;
+namespace Solo\Tests\Text;
 
-use Brick\Text\Lowercased;
-use Brick\Text\TextOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Text\Lowercased;
+use Solo\Text\TextOf;
 
 final class LowercasedTest extends TestCase
 {

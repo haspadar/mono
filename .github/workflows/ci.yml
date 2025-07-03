@@ -26,48 +26,13 @@ jobs:
       - name: Validate composer.json
         run: composer validate
 
-      - name: Run PHPStan on changed files
-        run: composer analyze
-
-      - name: Run Psalm static analysis
-        run: composer psalm
-
-      - name: Check code style with PHP-CS-Fixer on changed files
-        run: |
-          git fetch origin main
-          CHANGED=$(git diff --name-only origin/main...HEAD | grep '\.php$' || true)
-          if [ -n "$CHANGED" ]; then
-            echo "$CHANGED" | xargs PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes
-          else
-            echo "No changed PHP files to fix."
-          fi
-
-      - name: Run Psalm with Shepherd
-        run: composer psalm:shepherd
-
-      - name: Check platform requirements
-        run: composer check-platform-reqs
-
-      - name: Check for security vulnerabilities
-        run: composer audit
-
-      - name: Run tests
-        run: composer test
-
-      - name: Run tests with code coverage
-        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover=coverage.xml --coverage-filter=src
-
-      - name: Run mutation testing with Infection
-        run: |
-          ./vendor/bin/infection \
-            --threads=4 \
-            --show-mutations \
-            --logger-github
+      - name: Run full quality pipeline
+        run: composer ci-quality
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: haspadar/brick
+          slug: haspadar/solo
           files: coverage.xml
           fail_ci_if_error: true

@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Logic;
+namespace Solo\Tests\Logic;
 
-use Brick\Exception;
-use Brick\Logic\No;
-use Brick\Logic\ThrowsIf;
-use Brick\Logic\Yes;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Exception;
+use Solo\Logic\No;
+use Solo\Logic\ThrowsIf;
+use Solo\Logic\Yes;
 
 final class ThrowsIfTest extends TestCase
 {

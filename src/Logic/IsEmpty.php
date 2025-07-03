@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Logic;
+namespace Solo\Logic;
 
-use Brick\Text\Trimmed;
+use Solo\Text\Trimmed;
 
 /**
  * {@see Logic} that returns true if the text is empty or whitespace-only.

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Logic;
+namespace Solo\Logic;
 
-use Brick\Exception;
+use Solo\Exception;
 
 /**
  * Throws an exception if a {@see Logic} condition is met or not met.

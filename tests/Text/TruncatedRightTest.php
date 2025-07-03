@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Text;
+namespace Solo\Tests\Text;
 
-use Brick\Exception;
-use Brick\Text\TextOf;
-use Brick\Text\TruncatedRight;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Exception;
+use Solo\Text\TextOf;
+use Solo\Text\TruncatedRight;
 
 final class TruncatedRightTest extends TestCase
 {

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Logic;
+namespace Solo\Tests\Logic;
 
-use Brick\Logic\IsUrl;
-use Brick\Text\TextOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Logic\IsUrl;
+use Solo\Text\TextOf;
 
 final class IsUrlTest extends TestCase
 {

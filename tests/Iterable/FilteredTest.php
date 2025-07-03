@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Iterable;
+namespace Solo\Tests\Iterable;
 
-use Brick\Iterable\Filtered;
-use Brick\Iterable\SequenceOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Iterable\Filtered;
+use Solo\Iterable\SequenceOf;
 
 final class FilteredTest extends TestCase
 {

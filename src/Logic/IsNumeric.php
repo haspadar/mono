@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Logic;
+namespace Solo\Logic;
 
 /**
  * {@see Logic} that returns true if text represents a valid numeric value.

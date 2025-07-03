@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Iterable;
+namespace Solo\Tests\Iterable;
 
-use Brick\Iterable\Mapped;
-use Brick\Iterable\SequenceOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Iterable\Mapped;
+use Solo\Iterable\SequenceOf;
 
 final class MappedTest extends TestCase
 {

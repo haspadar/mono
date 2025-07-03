@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Logic;
+namespace Solo\Logic;
 
-use Brick\Text\Text;
+use Solo\Text\Text;
 
 /**
  * {@see Logic} that returns true if a {@see Text} is a valid URL.

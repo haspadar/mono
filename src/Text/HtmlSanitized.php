@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Text;
+namespace Solo\Text;
 
 /**
  * {@see Text} sanitized for HTML output.

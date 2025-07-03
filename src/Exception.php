@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Brick;
+namespace Solo;
 
 final class Exception extends \Exception
 {

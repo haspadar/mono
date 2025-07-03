@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Text;
+namespace Solo\Text;
 
 /**
  * Length of {@see Text}, measured in multibyte characters.
@@ -26,6 +26,6 @@ final readonly class LengthOf
 
     public function value(): int
     {
-        return mb_strlen($this->origin->value());
+        return mb_strlen($this->origin->value(), 'UTF-8');
     }
 }

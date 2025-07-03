@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Logic;
+namespace Solo\Logic;
 
 /**
  * {@see Logic} that returns true if text contains only alphanumeric characters (A–Z, a–z, 0–9).

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Text;
+namespace Solo\Tests\Text;
 
-use Brick\Text\TextOf;
-use Brick\Text\Trimmed;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Text\TextOf;
+use Solo\Text\Trimmed;
 
 final class TrimmedTest extends TestCase
 {

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Text;
+namespace Solo\Tests\Text;
 
-use Brick\Text\LengthOf;
-use Brick\Text\TextOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Text\LengthOf;
+use Solo\Text\TextOf;
 
 final class LengthOfTest extends TestCase
 {

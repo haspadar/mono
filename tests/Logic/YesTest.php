@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Brick\Tests\Logic;
+namespace Solo\Tests\Logic;
 
-use Brick\Logic\Yes;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Logic\Yes;
 
 final class YesTest extends TestCase
 {

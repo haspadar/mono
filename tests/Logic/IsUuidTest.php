@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Brick\Tests\Logic;
+namespace Solo\Tests\Logic;
 
-use Brick\Logic\IsUuid;
-use Brick\Text\TextOf;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Solo\Logic\IsUuid;
+use Solo\Text\TextOf;
 
 final class IsUuidTest extends TestCase
 {

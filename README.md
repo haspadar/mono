@@ -1,22 +1,22 @@
-# 🧱 Brick
+# 🎵 Solo
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.4-blue)](https://www.php.net/releases/8.4/)
 [![Code Style](https://img.shields.io/badge/Code%20Style-PSR--12-blue)](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
-[![CI](https://github.com/haspadar/brick/actions/workflows/ci.yml/badge.svg)](https://github.com/haspadar/brick/actions/workflows/ci.yml)
+[![CI](https://github.com/haspadar/solo/actions/workflows/ci.yml/badge.svg)](https://github.com/haspadar/solo/actions/workflows/ci.yml)
 [![PHP Metrics](https://img.shields.io/badge/Metrics-phpmetrics%203.0-blue)](https://phpmetrics.org/)
 
-[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://github.com/haspadar/brick/actions/workflows/ci.yml)
-[![Coverage](https://codecov.io/gh/haspadar/brick/branch/main/graph/badge.svg)](https://codecov.io/gh/haspadar/brick)
+[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](https://github.com/haspadar/solo/actions/workflows/ci.yml)
+[![Coverage](https://codecov.io/gh/haspadar/solo/branch/main/graph/badge.svg)](https://codecov.io/gh/haspadar/solo)
 [![PHPStan Level](https://img.shields.io/badge/PHPStan-Level%209-brightgreen)](https://phpstan.org/)
 [![Psalm](https://img.shields.io/badge/psalm-level%208-brightgreen)](https://psalm.dev)
-[![Psalm Type Coverage](https://shepherd.dev/github/haspadar/brick/coverage.svg)](https://shepherd.dev/github/haspadar/brick)
+[![Psalm Type Coverage](https://shepherd.dev/github/haspadar/solo/coverage.svg)](https://shepherd.dev/github/haspadar/solo)
 [![Mutation MSI](https://img.shields.io/badge/Mutation%20MSI-100%25-brightgreen)](https://infection.github.io/)
 
 ---
 
 ## 📦 About
 
-**Brick** is a library of immutable value objects that wrap primitive types like `string`, `int`, `bool`, and `array`.
+**Solo** is a library of immutable value objects that wrap primitive types like `string`, `int`, `bool`, and `array`.
 
 Instead of passing around loose values, you use small, self-contained wrappers like:
 
@@ -30,7 +30,7 @@ Each class encapsulates one behavior and can be composed with others to form rob
 
 ## 🧠 Philosophy
 
-- ❌ No `null`, `static`, `if`, `foreach`, or shared state
+- ❌ No `null`, `static`, or shared state in the public API
 - ✅ One object = one responsibility
 - ✅ Final classes, immutability by default
 - ✅ Composition over inheritance
@@ -43,9 +43,9 @@ Inspired by [Elegant Objects](https://www.yegor256.com/elegant-objects.html) and
 ## ✨ Example
 
 ```php
-use Brick\Text\NonBlank;
-use Brick\Text\TruncatedRight;
-use Brick\Text\Trimmed;
+use Solo\Text\NonBlank;
+use Solo\Text\TruncatedRight;
+use Solo\Text\Trimmed;
 
 $text = new NonBlank(
     new TruncatedRight(
@@ -94,10 +94,10 @@ Every push and pull request is checked via GitHub Actions:
 ## 📥 Installation
 
 ```bash
-composer require haspadar/brick
+composer require haspadar/solo
 ```
 
-Requires PHP 8.4 or higher.
+Requires PHP 8.4
 
 ---
 

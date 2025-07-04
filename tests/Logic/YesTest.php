@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Logic;
+namespace Mono\Tests\Logic;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Logic\Yes;
+use Mono\Logic\Yes;
 
 final class YesTest extends TestCase
 {

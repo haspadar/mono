@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Iterable;
+namespace Mono\Iterable;
 
 use Closure;
 

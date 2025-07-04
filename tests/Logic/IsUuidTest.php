@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Solo\Tests\Logic;
+namespace Mono\Tests\Logic;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Logic\IsUuid;
-use Solo\Text\TextOf;
+use Mono\Logic\IsUuid;
+use Mono\Text\TextOf;
 
 final class IsUuidTest extends TestCase
 {

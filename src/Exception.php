@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo;
+namespace Mono;
 
 final class Exception extends \Exception
 {

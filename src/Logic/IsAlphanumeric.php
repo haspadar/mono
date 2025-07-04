@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Logic;
+namespace Mono\Logic;
 
 /**
  * {@see Logic} that returns true if text contains only alphanumeric characters (A–Z, a–z, 0–9).

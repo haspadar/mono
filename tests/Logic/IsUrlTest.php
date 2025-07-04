@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Logic;
+namespace Mono\Tests\Logic;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Logic\IsUrl;
-use Solo\Text\TextOf;
+use Mono\Logic\IsUrl;
+use Mono\Text\TextOf;
 
 final class IsUrlTest extends TestCase
 {

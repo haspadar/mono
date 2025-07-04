@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Iterable;
+namespace Mono\Iterable;
 
 /**
  * Filters items in a {@see Sequence} by a predicate.

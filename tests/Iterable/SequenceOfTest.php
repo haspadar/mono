@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Iterable;
+namespace Mono\Tests\Iterable;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Iterable\SequenceOf;
+use Mono\Iterable\SequenceOf;
 
 final class SequenceOfTest extends TestCase
 {

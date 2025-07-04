@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Text;
+namespace Mono\Tests\Text;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Text\HtmlSanitized;
-use Solo\Text\TextOf;
+use Mono\Text\HtmlSanitized;
+use Mono\Text\TextOf;
 
 final class HtmlSanitizedTest extends TestCase
 {

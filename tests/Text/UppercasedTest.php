@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Text;
+namespace Mono\Tests\Text;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Text\TextOf;
-use Solo\Text\Uppercased;
+use Mono\Text\TextOf;
+use Mono\Text\Uppercased;
 
 final class UppercasedTest extends TestCase
 {

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Logic;
+namespace Mono\Logic;
 
-use Solo\Text\Text;
+use Mono\Text\Text;
 
 /**
  * {@see Logic} that returns true if a {@see Text} is a valid URL.

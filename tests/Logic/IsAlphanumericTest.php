@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Solo\Tests\Logic;
+namespace Mono\Tests\Logic;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Logic\IsAlphanumeric;
-use Solo\Text\TextOf;
+use Mono\Logic\IsAlphanumeric;
+use Mono\Text\TextOf;
 
 final class IsAlphanumericTest extends TestCase
 {

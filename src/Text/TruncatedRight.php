@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Mono\Text;
 
 use Mono\Exception;
-use Mono\Text;
 
 /**
  * {@see Text} truncated from the right.

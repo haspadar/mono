@@ -10,7 +10,6 @@ namespace Mono\Text;
 
 use Mono\Scalar\ScalarEnvelope;
 use Mono\Scalar\ScalarOf;
-use Mono\Text;
 
 /**
  * Length of {@see Text}, measured in multibyte characters.

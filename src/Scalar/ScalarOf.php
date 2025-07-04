@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Mono\Scalar;
 
-use Mono\Scalar;
-
 /**
  * A scalar that wraps a deferred computation.
  *

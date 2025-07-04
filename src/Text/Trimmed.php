@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Mono\Text;
 
-use Mono\Text;
-
 /**
  * {@see Text} without leading or trailing whitespace.
  *

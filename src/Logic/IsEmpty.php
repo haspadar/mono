@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Mono\Logic;
 
-use Mono\Logic;
 use Mono\Text\Trimmed;
 
 /**

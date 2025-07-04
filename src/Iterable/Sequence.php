@@ -6,7 +6,7 @@
 */
 declare(strict_types=1);
 
-namespace Mono;
+namespace Mono\Iterable;
 
 use IteratorAggregate;
 use Traversable;

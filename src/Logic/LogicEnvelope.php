@@ -8,8 +8,7 @@ declare(strict_types=1);
 
 namespace Mono\Logic;
 
-use Mono\Logic;
-use Mono\Text;
+use Mono\Text\Text;
 
 /**
  * Envelope for {@see Logic}, delegating the call to the origin.

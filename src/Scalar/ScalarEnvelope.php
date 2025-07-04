@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Mono\Scalar;
 
-use Mono\Scalar;
-
 /**
  * Envelope for {@see Scalar}, delegating all calls to the origin.
  *

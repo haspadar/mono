@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Mono\Iterable;
 
 use Iterator;
-use Mono\Sequence;
 
 /**
  * Base class for {@see Sequence} implementations.

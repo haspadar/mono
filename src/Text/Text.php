@@ -6,7 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Mono;
+namespace Mono\Text;
+
+use Mono\Scalar\Scalar;
 
 /**
  * Represents a string value.

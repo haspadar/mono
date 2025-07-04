@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Mono\Text;
 
-use Mono\Text;
-
 /**
  * Envelope for {@see Text}, delegating all calls to the origin.
  *

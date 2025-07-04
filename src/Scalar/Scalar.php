@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Mono;
+namespace Mono\Scalar;
 
 /**
  * Represents a lazily-evaluated value of any type.

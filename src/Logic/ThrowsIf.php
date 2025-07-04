@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Mono\Logic;
 
 use Mono\Exception;
-use Mono\Logic;
 
 /**
  * Throws an exception if a {@see Logic} condition is met or not met.

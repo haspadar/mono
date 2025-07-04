@@ -6,7 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Mono;
+namespace Mono\Logic;
+
+use Mono\Scalar\Scalar;
 
 /**
  * A logical boolean component.

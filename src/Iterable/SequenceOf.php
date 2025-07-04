@@ -10,6 +10,7 @@ namespace Mono\Iterable;
 
 use ArrayIterator;
 use Iterator;
+use Mono\Sequence;
 
 /**
  * A sequence backed by a PHP array.

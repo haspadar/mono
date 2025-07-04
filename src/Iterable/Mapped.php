@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Mono\Iterable;
 
 use Closure;
+use Mono\Sequence;
 
 /**
  * A sequence where each item is the result of applying a function to the original items.

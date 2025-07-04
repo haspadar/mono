@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Mono\Text;
 
+use Mono\Text;
+
 /**
  * {@see Text} preview truncated to a max length with ellipsis.
  *

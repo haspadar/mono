@@ -8,7 +8,8 @@ declare(strict_types=1);
 
 namespace Mono\Logic;
 
-use Mono\Text\Text;
+use Mono\Logic;
+use Mono\Text;
 
 /**
  * {@see Logic} that returns true if a {@see Text} is a valid URL.

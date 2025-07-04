@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Mono\Iterable;
 
+use Mono\Sequence;
+
 /**
  * Filters items in a {@see Sequence} by a predicate.
  *

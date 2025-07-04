@@ -8,24 +8,29 @@ declare(strict_types=1);
 
 namespace Mono\Text;
 
+use Mono\Scalar\ScalarEnvelope;
+use Mono\Scalar\ScalarOf;
+use Mono\Text;
+
 /**
  * Length of {@see Text}, measured in multibyte characters.
  *
  * Example:
- * $length = new LengthOf(new TextOf('Прывітанне'));
- * echo $length->value(); // 10
+ * $length = new LengthOf(new TextOf('Café Noël'));
+ * echo $length->value(); // 9
  *
+ * @extends ScalarEnvelope<int>
  * @psalm-pure
- * @since 0.1
  */
-final readonly class LengthOf
+final readonly class LengthOf extends ScalarEnvelope
 {
-    public function __construct(private Text $origin)
+    public function __construct(Text $origin)
     {
-    }
+        /** @var ScalarOf<int> $scalar */
+        $scalar = new ScalarOf(
+            fn (): int => mb_strlen($origin->value(), 'UTF-8')
+        );
 
-    public function value(): int
-    {
-        return mb_strlen($this->origin->value(), 'UTF-8');
+        parent::__construct($scalar);
     }
 }

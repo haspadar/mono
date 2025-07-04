@@ -6,18 +6,20 @@
  */
 declare(strict_types=1);
 
-namespace Mono\Text;
+namespace Mono;
 
 /**
  * Represents a string value.
  *
  * Used for composition and decoration of string-based logic.
  *
+ * @extends Scalar<string>
  */
-interface Text
+interface Text extends Scalar
 {
     /**
      * Returns the string value represented by this object.
      */
+    #[\Override]
     public function value(): string;
 }

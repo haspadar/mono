@@ -6,20 +6,22 @@
  */
 declare(strict_types=1);
 
-namespace Mono\Logic;
+namespace Mono;
 
 /**
  * A logical boolean component.
  *
  * Represents a boolean condition.
  *
+ * @extends Scalar<bool>
  * @psalm-pure
  */
-interface Logic
+interface Logic extends Scalar
 {
     /**
      * Whether the condition is logically true.
      */
+    #[\Override]
     public function value(): bool;
 
 }

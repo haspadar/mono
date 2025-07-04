@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Mono\Logic;
 
+use Mono\Logic;
+
 /**
  * {@see Logic} that returns true if the text is a valid UUID v1–v5.
  *

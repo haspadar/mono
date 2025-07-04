@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Logic;
 
+use Mono\Logic\Yes;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Mono\Logic\Yes;
 
 final class YesTest extends TestCase
 {

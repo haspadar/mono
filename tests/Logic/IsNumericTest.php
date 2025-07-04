@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Logic;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Logic\IsNumeric;
 use Mono\Text\TextOf;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class IsNumericTest extends TestCase
 {

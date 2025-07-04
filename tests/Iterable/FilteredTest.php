@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Iterable;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Iterable\Filtered;
 use Mono\Iterable\SequenceOf;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class FilteredTest extends TestCase
 {

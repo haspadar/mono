@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Text;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Text\TextOf;
 use Mono\Text\Trimmed;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class TrimmedTest extends TestCase
 {

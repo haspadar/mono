@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Text;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Text\Preview;
 use Mono\Text\TextOf;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class PreviewTest extends TestCase
 {

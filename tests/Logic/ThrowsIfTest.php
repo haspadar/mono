@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Logic;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Exception;
 use Mono\Logic\No;
 use Mono\Logic\ThrowsIf;
 use Mono\Logic\Yes;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class ThrowsIfTest extends TestCase
 {

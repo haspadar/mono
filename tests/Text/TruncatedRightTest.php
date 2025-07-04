@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Text;
 
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Mono\Exception;
 use Mono\Text\TextOf;
 use Mono\Text\TruncatedRight;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 
 final class TruncatedRightTest extends TestCase
 {

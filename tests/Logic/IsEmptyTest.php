@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Logic;
 
+use Mono\Logic\IsEmpty;
+use Mono\Text\TextOf;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Mono\Logic\IsEmpty;
-use Mono\Text\TextOf;
 
 final class IsEmptyTest extends TestCase
 {

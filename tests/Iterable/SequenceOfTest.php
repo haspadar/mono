@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Mono\Tests\Iterable;
 
+use Mono\Iterable\SequenceOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Mono\Iterable\SequenceOf;
 
 final class SequenceOfTest extends TestCase
 {

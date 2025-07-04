@@ -11,7 +11,6 @@ namespace Mono\Text;
 /**
  * Envelope for {@see Text}, delegating all calls to the origin.
  *
- * @codeCoverageIgnore
  */
 abstract readonly class TextEnvelope implements Text
 {
@@ -23,11 +22,5 @@ abstract readonly class TextEnvelope implements Text
     public function value(): string
     {
         return $this->origin->value();
-    }
-
-    #[\Override]
-    public function __toString(): string
-    {
-        return $this->value();
     }
 }

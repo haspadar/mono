@@ -1,5 +1,5 @@
 {
-  "name": "haspadar/solo",
+  "name": "haspadar/mono",
   "description": "Primitive wrappers for PHP: strong typing for strings, ints, arrays, and more",
   "type": "library",
   "license": "MIT",
@@ -21,12 +21,12 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Solo\\": "src/"
+      "Mono\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Solo\\Tests\\": "tests/"
+      "Mono\\Tests\\": "tests/"
     }
   },
   "scripts": {

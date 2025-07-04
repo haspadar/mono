@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Iterable;
+namespace Mono\Tests\Iterable;
 
+use Mono\Iterable\Filtered;
+use Mono\Iterable\SequenceOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Iterable\Filtered;
-use Solo\Iterable\SequenceOf;
 
 final class FilteredTest extends TestCase
 {

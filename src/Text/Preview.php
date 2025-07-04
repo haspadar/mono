@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Text;
+namespace Mono\Text;
 
 /**
  * {@see Text} preview truncated to a max length with ellipsis.

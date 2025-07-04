@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Logic;
+namespace Mono\Tests\Logic;
 
+use Mono\Exception;
+use Mono\Logic\No;
+use Mono\Logic\ThrowsIf;
+use Mono\Logic\Yes;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Exception;
-use Solo\Logic\No;
-use Solo\Logic\ThrowsIf;
-use Solo\Logic\Yes;
 
 final class ThrowsIfTest extends TestCase
 {

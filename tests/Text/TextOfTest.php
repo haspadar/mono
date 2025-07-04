@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Text;
+namespace Mono\Tests\Text;
 
+use Mono\Text\TextOf;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Text\TextOf;
 
 final class TextOfTest extends TestCase
 {

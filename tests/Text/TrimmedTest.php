@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Tests\Text;
+namespace Mono\Tests\Text;
 
+use Mono\Text\TextOf;
+use Mono\Text\Trimmed;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Solo\Text\TextOf;
-use Solo\Text\Trimmed;
 
 final class TrimmedTest extends TestCase
 {

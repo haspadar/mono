@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Text;
+namespace Mono\Text;
 
 /**
  * Length of {@see Text}, measured in multibyte characters.

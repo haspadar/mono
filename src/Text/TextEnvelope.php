@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Text;
+namespace Mono\Text;
 
 /**
  * Envelope for {@see Text}, delegating all calls to the origin.

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Text;
+namespace Mono\Text;
 
-use Solo\Exception;
+use Mono\Exception;
 
 /**
  * {@see Text} truncated from the right.

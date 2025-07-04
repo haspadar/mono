@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace Solo\Logic;
+namespace Mono\Logic;
 
-use Solo\Text\Trimmed;
+use Mono\Text\Trimmed;
 
 /**
  * {@see Logic} that returns true if the text is empty or whitespace-only.
